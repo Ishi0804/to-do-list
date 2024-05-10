@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table tr {
+    border-bottom: 1px solid #ccc;
+}
+.table td {
+    padding: 10px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #991aa4;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+.border {
+    border: 1px solid #ccc;
+}
+
+.m-1 {
+    margin: 5px;
+}
+
+.d-none {
+    display: none;
+}
+/* Edit and Delete Button Styles */
+.btn-edit,
+.btn-delete {
+    padding: 8px 16px;
+    background-color: #28a745; /* Green for Edit */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-delete {
+    background-color: #dc3545; /* Red for Delete */
+}
+
+.btn-edit:hover,
+.btn-delete:hover {
+    background-color: #218838; /* Darker green for Edit */
+}
+
+.btn-delete:hover {
+    background-color: #c82333; /* Darker red for Delete */
+}
+
+
+    </style>
+   
+   </head>
+<body>
+    <div class="container" >
+        <h1 class="text-center p-4">TO DO LIST</h1>
+       
+            <form action="/insertion" method="post" class="mx-auto p-2">
+                <label  class="form-label">Add Task</label>
+                <input type="text" id="" class="form-control"   name="task">
+                
+                <button class="btn border m-1">add task</button>
+                
+                <table class="table table-dark table-striped-columns w-100">
+                <tr>
+                    <th class="text-center d-none" style="width: 50px;">no</th>
+                    <th class="text-center" style="width: 600px;">Task</th>
+                    <th class="text-center" style="width: 100px;">edit</th>
+                    <th  class="text-center" style="width: 100px;">delet</th>
+                   
+                </tr>
+               
+                    <%Addtask.map((val)=>{ %>
+                        <tr>
+                            <td class="text-white d-none"><%= val.id %></td>  
+                        <td class="text-white " ><%= val.task %></td>
+                        <td class="text-white">
+                            <a class="text-white btn-edit" href="/editData?id=<%=val.id%>">Edit</a>
+                        </td>
+                        <td class="text-white">
+                            <a class="text-white btn-delete" href="/deletData?id=<%=val.id%>">Delete</a>
+                        </td>
+                         </tr>
+                   <% })%>
+                   
+               
+            </form>
+        </table>
+
+
+    </div>
+    
+    
+</body>
+</html>

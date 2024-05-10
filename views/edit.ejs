@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.border {
+    border: 1px solid #ccc;
+}
+
+.m-1 {
+    margin: 5px;
+}
+
+.d-none {
+    display: none;
+}
+
+    </style>
+
+</head>
+<body>
+
+    <div class="container" >
+        <h1 class="text-center p-4">TO DO LIST</h1>
+       
+            <form action="/editData" method="post" class="mx-auto p-2">
+                <label  class="form-label">change Task</label>
+                <input type="text" id="" class="form-control"   name="task" value="<%=Addtask.task%>">
+                <input type=" number" class="form-control d-none" name="id" value="<%=Addtask.id%>" > 
+
+                <button class="btn border m-1">update</button>
+            </form>
+            </div>    
+</body>
+</html>
